@@ -21,13 +21,14 @@ class TextBoxPage {
 
   async verifySubmission(data) {
     const name = await this.page.locator('#name').textContent();
-    console.log('Verifying FullName: ', name);
     const email = await this.page.locator('#email').textContent();
-    console.log('Verifying Email: ', email);
     const currentAddress = await this.page.locator('#output #currentAddress').textContent();
-    console.log('Verifying current address:', currentAddress);
     const permanentAddress = await this.page.locator('#output #permanentAddress').textContent();
-    console.log('Verifying permanent address:', permanentAddress);
+
+    console.log('Verifying FullName: ', name);
+    console.log('Verifying Email: ', email);
+    console.log('Verifying Current Address: ', currentAddress);
+    console.log('Verifying Permanent Address: ', permanentAddress);
 
 
     return {
