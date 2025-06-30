@@ -15,12 +15,11 @@ test('Submit form using JSON data and verify', async ({ page }) => {
         await textBoxPage.fillForm(record);
         const result = await textBoxPage.verifySubmission(record);
 
-        // Check if all verifications passed
+        
         const pass = result.name && result.email && result.currentAddress && result.permanentAddress;
         record.testResult = pass ? 'Pass' : 'Fail';
     }
 
-    // Write updated data back to the JSON file
     fs.writeFileSync(filePath, JSON.stringify(dataSet, null, 2), 'utf-8');
     console.log('Test results updated successfully in the JSON file.');
 });
